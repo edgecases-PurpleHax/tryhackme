@@ -1,0 +1,249 @@
+Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Tue Apr 26 20:30:46 2022
+
+ ========================== 
+|    Target Information    |
+ ========================== 
+Target ........... 10.10.16.154
+RID Range ........ 500-550,1000-1050
+Username ......... ''
+Password ......... ''
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ==================================================== 
+|    Enumerating Workgroup/Domain on 10.10.16.154    |
+ ==================================================== 
+[+] Got domain/workgroup name: WORKGROUP
+
+ ============================================ 
+|    Nbtstat Information for 10.10.16.154    |
+ ============================================ 
+Looking up status of 10.10.16.154
+	BLOG            <00> -         B <ACTIVE>  Workstation Service
+	BLOG            <03> -         B <ACTIVE>  Messenger Service
+	BLOG            <20> -         B <ACTIVE>  File Server Service
+	..__MSBROWSE__. <01> - <GROUP> B <ACTIVE>  Master Browser
+	WORKGROUP       <00> - <GROUP> B <ACTIVE>  Domain/Workgroup Name
+	WORKGROUP       <1d> -         B <ACTIVE>  Master Browser
+	WORKGROUP       <1e> - <GROUP> B <ACTIVE>  Browser Service Elections
+
+	MAC Address = 00-00-00-00-00-00
+
+ ===================================== 
+|    Session Check on 10.10.16.154    |
+ ===================================== 
+[+] Server 10.10.16.154 allows sessions using username '', password ''
+
+ =========================================== 
+|    Getting domain SID for 10.10.16.154    |
+ =========================================== 
+Domain Name: WORKGROUP
+Domain Sid: (NULL SID)
+[+] Can't determine if host is part of domain or part of a workgroup
+
+ ====================================== 
+|    OS information on 10.10.16.154    |
+ ====================================== 
+[+] Got OS info for 10.10.16.154 from smbclient: 
+[+] Got OS info for 10.10.16.154 from srvinfo:
+	BLOG           Wk Sv PrQ Unx NT SNT blog server (Samba, Ubuntu)
+	platform_id     :	500
+	os version      :	6.1
+	server type     :	0x809a03
+
+ ============================= 
+|    Users on 10.10.16.154    |
+ ============================= 
+
+
+ ========================================= 
+|    Share Enumeration on 10.10.16.154    |
+ ========================================= 
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	print$          Disk      Printer Drivers
+	BillySMB        Disk      Billy's local SMB Share
+	IPC$            IPC       IPC Service (blog server (Samba, Ubuntu))
+Reconnecting with SMB1 for workgroup listing.
+
+	Server               Comment
+	---------            -------
+
+	Workgroup            Master
+	---------            -------
+	WORKGROUP            BLOG
+
+[+] Attempting to map shares on 10.10.16.154
+//10.10.16.154/print$	Mapping: DENIED, Listing: N/A
+//10.10.16.154/BillySMB	Mapping: OK, Listing: OK
+//10.10.16.154/IPC$	[E] Can't understand response:
+NT_STATUS_OBJECT_NAME_NOT_FOUND listing \*
+
+ ==================================================== 
+|    Password Policy Information for 10.10.16.154    |
+ ==================================================== 
+
+
+[+] Attaching to 10.10.16.154 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+[+] Found domain(s):
+
+	[+] BLOG
+	[+] Builtin
+
+[+] Password Info for Domain: BLOG
+
+	[+] Minimum password length: 5
+	[+] Password history length: None
+	[+] Maximum password age: 37 days 6 hours 21 minutes 
+	[+] Password Complexity Flags: 000000
+
+		[+] Domain Refuse Password Change: 0
+		[+] Domain Password Store Cleartext: 0
+		[+] Domain Password Lockout Admins: 0
+		[+] Domain Password No Clear Change: 0
+		[+] Domain Password No Anon Change: 0
+		[+] Domain Password Complex: 0
+
+	[+] Minimum password age: None
+	[+] Reset Account Lockout Counter: 30 minutes 
+	[+] Locked Account Duration: 30 minutes 
+	[+] Account Lockout Threshold: None
+	[+] Forced Log off Time: 37 days 6 hours 21 minutes 
+
+
+[+] Retieved partial password policy with rpcclient:
+
+Password Complexity: Disabled
+Minimum Password Length: 5
+
+
+ ============================== 
+|    Groups on 10.10.16.154    |
+ ============================== 
+
+[+] Getting builtin groups:
+
+[+] Getting builtin group memberships:
+
+[+] Getting local groups:
+
+[+] Getting local group memberships:
+
+[+] Getting domain groups:
+
+[+] Getting domain group memberships:
+
+ ======================================================================= 
+|    Users on 10.10.16.154 via RID cycling (RIDS: 500-550,1000-1050)    |
+ ======================================================================= 
+[I] Found new SID: S-1-22-1
+[I] Found new SID: S-1-5-21-3132497411-2525593288-1635041108
+[I] Found new SID: S-1-5-32
+[+] Enumerating users using SID S-1-5-21-3132497411-2525593288-1635041108 and logon username '', password ''
+S-1-5-21-3132497411-2525593288-1635041108-500 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-501 BLOG\nobody (Local User)
+S-1-5-21-3132497411-2525593288-1635041108-502 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-503 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-504 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-505 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-506 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-507 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-508 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-509 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-510 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-511 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-512 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-513 BLOG\None (Domain Group)
+S-1-5-21-3132497411-2525593288-1635041108-514 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-515 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-516 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-517 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-518 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-519 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-520 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-521 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-522 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-523 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-524 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-525 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-526 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-527 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-528 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-529 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-530 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-531 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-532 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-533 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-534 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-535 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-536 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-537 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-538 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-539 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-540 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-541 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-542 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-543 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-544 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-545 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-546 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-547 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-548 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-549 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-550 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1000 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1001 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1002 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1003 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1004 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1005 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1006 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1007 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1008 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1009 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1010 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1011 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1012 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1013 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1014 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1015 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1016 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1017 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1018 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1019 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1020 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1021 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1022 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1023 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1024 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1025 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1026 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1027 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1028 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1029 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1030 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1031 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1032 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1033 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1034 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1035 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1036 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1037 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1038 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1039 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1040 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1041 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1042 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1043 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1044 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1045 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1046 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1047 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1048 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1049 *unknown*\*unknown* (8)
+S-1-5-21-3132497411-2525593288-1635041108-1050 *unknown*\*unknown* (8)
+[+] Enumerating users using SID S-1-22-1 and logon username '', password ''
